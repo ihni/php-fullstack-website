@@ -12,6 +12,7 @@ This is a simple PHP project for registering, loggin in, and viewing users. Plea
 ## Installation
 
 1. **Clone the Repository:**
+    Make sure to clone the repository in the htdocs located in the XAMPP folder
    ```bash
    git clone https://github.com/ihni/php-fullstack-website.git
    ```
@@ -35,4 +36,26 @@ This is a simple PHP project for registering, loggin in, and viewing users. Plea
     ```
     Update the .env file with for your environment.
 
-5. 
+5. **Run Migrations:**
+    To set up the database, run the following command:
+    ```bash
+    composer migrate
+    ```
+    This will run the bin/migrate.php script, creating necessary tables like users.
+
+6. **Seed Database(Optional):**
+    To populate the database with sample data, run the seeding script using Composer:
+    ```bash
+    composer seed
+    ```
+    This will run the bin/seeder.php script, creating some sample users with hashed passwords.
+
+7. **Start XAMPP:**
+    Make sure the XAMPP server is running:
+    - Run the MySQL and Apache Services
+
+8. **Access the Application:**
+    Once everything is set up and your database is seeded, you can access your application via the browser by navigating to:
+    ```arduino
+    http://localhost/php-fullstack-website/
+    ```
