@@ -1,11 +1,15 @@
 <?php
-$pageTitle = 'Sign up!';
+$pageTitle = 'Sign up';
 include '../includes/header.php';
 ?>
 
 <main>
     <h2>Sign up!</h2>
     <p>Fill in your details to continue </p>
+
+    <?php if (isset($errorMessage)) : ?>
+        <p style="color: red;"><?php echo $errorMessage; ?></p>
+    <?php endif; ?>
 
     <form method="POST">
         <input type="text" name="fname" placeholder="First Name">
