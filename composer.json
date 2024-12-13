@@ -1,0 +1,9 @@
+{
+    "name": "aidan/php-fullstack",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
