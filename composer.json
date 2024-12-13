@@ -7,7 +7,7 @@
         }
     },
     "scripts": {
-        "migrate": "php bin/migrate.php",
+        "migrate": "php bin/migration.php",
         "seed": "php bin/seeder.php"
     }
 }

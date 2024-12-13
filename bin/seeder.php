@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Sample seeds for project
 $users = [
@@ -7,7 +7,7 @@ $users = [
     ['role' => 1, 'fname' => 'Admin', 'lname' => 'Lastname', 'email' => 'admin@admin.com', 'password' => 'admin']
 ];
 
-$config = include __DIR__ . '/../../config/config.php';
+$config = include __DIR__ . '/../config/config.php';
 
 $db_host = $config['db']['host'];
 $db_user = $config['db']['user'];
