@@ -32,7 +32,7 @@ include '../includes/header.php';
                 <?php if (!empty($users)): ?>
                     <?php foreach ($users as $user): ?>
                         <?php $isAdmin = $user['role'] === 1;?>
-                        <tr class="border-b <?php echo $isAdmin ? 'bg-yellow-50' : ''; ?>"> <!-- Highlight admin rows -->
+                        <tr class="border-b">
                             <td class="px-6 py-4 text-gray-700"><?php echo htmlspecialchars($user['id']); ?></td>
                             <td class="px-6 py-4 text-gray-700"><?php echo htmlspecialchars($user['fname']); ?></td>
                             <td class="px-6 py-4 text-gray-700"><?php echo htmlspecialchars($user['lname']); ?></td>
@@ -41,9 +41,10 @@ include '../includes/header.php';
                             <?php 
                             
                             if ($isAdmin): ?>
-                                <i class="fas fa-user-shield mr-2 text-red-500"></i>
+                                <i class="fas fa-user-shield mr-2 text-yellow-500"></i>
+                            <?php else: ?>
+                                <i class="fa-solid fa-user"></i>
                             <?php endif; ?>
-                            <?php echo htmlspecialchars($user['role']); ?>
                             </td>
                             <td class="px-6 py-4 text-gray-700">
                             <?php 

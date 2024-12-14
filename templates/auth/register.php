@@ -22,32 +22,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
 
         <form method="POST" action="register.php" class="space-y-4">
-            <!-- First Name -->
-            <div>
-                <input
-                    type="text"
-                    name="fname"
-                    placeholder="First Name"
-                    value="<?php echo htmlspecialchars($_POST['fname'] ?? ''); ?>"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                <?php if (!empty($errors['fname'])): ?>
-                    <p class="text-red-500 text-sm mt-1"><?= htmlspecialchars($errors['fname']) ?></p>
-                <?php endif; ?>
-            </div>
+            <!-- First and Last Name (in a row) -->
+            <div class="flex space-x-4">
+                <div class="flex-1">
+                    <input
+                        type="text"
+                        name="fname"
+                        placeholder="First Name"
+                        value="<?php echo htmlspecialchars($_POST['fname'] ?? ''); ?>"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+                    >
+                    <?php if (!empty($errors['fname'])): ?>
+                        <p class="text-red-500 text-sm mt-1"><?= htmlspecialchars($errors['fname']) ?></p>
+                    <?php endif; ?>
+                </div>
 
-            <!-- Last Name -->
-            <div>
-                <input
-                    type="text"
-                    name="lname"
-                    placeholder="Last Name"
-                    value="<?php echo htmlspecialchars($_POST['lname'] ?? ''); ?>"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                <?php if (!empty($errors['lname'])): ?>
-                    <p class="text-red-500 text-sm mt-1"><?= htmlspecialchars($errors['lname']) ?></p>
-                <?php endif; ?>
+                <div class="flex-1">
+                    <input
+                        type="text"
+                        name="lname"
+                        placeholder="Last Name"
+                        value="<?php echo htmlspecialchars($_POST['lname'] ?? ''); ?>"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+                    >
+                    <?php if (!empty($errors['lname'])): ?>
+                        <p class="text-red-500 text-sm mt-1"><?= htmlspecialchars($errors['lname']) ?></p>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <!-- Email -->
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     name="email"
                     placeholder="Email"
                     value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
                 >
                 <?php if (!empty($errors['email'])): ?>
                     <p class="text-red-500 text-sm mt-1"><?= htmlspecialchars($errors['email']) ?></p>
@@ -70,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     type="password"
                     name="password"
                     placeholder="Password"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
                 >
                 <?php if (!empty($errors['password'])): ?>
                     <p class="text-red-500 text-sm mt-1"><?= htmlspecialchars($errors['password']) ?></p>
@@ -83,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     type="password"
                     name="confirm_password"
                     placeholder="Confirm Password"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
                 >
                 <?php if (!empty($errors['confirm_password'])): ?>
                     <p class="text-red-500 text-sm mt-1"><?= htmlspecialchars($errors['confirm_password']) ?></p>
@@ -94,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div>
                 <button
                     type="submit"
-                    class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    class="w-full bg-sky-600 text-white py-2 rounded-lg hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
                 >
                     Sign up
                 </button>
@@ -106,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Callout -->
         <div class="mt-6 text-center text-sm text-gray-600">
             Already have an account? 
-            <a href="login.php" class="text-indigo-500 hover:text-indigo-700 font-medium">Sign in</a>
+            <a href="login.php" class="text-sky-500 hover:text-sky-700 font-medium">Sign in</a>
         </div>
     </section>
 </main>

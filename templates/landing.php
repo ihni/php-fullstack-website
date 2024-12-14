@@ -19,7 +19,7 @@ include 'includes/header.php';
             It's a showcase of my knowledge in backend and frontend development(though i really don't do frontend nor enjoy it at all)
         </p>
         <div class="mt-6">
-            <a href="<?php echo BASE_URL ?>templates/auth/register.php" class="bg-sky-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-700">Get Started</a>
+            <a href="<?php echo BASE_URL ?>templates/auth/register.php" class="bg-sky-500 text-white py-2 px-4 rounded-lg hover:bg-sky-600">Get Started</a>
         </div>
     </article>
 </main>
