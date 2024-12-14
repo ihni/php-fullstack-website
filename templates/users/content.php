@@ -18,21 +18,21 @@ include '../includes/header.php';
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="https://source.unsplash.com/400x250/?nature,landscape" alt="Project 1" class="w-full h-56 object-cover">
+                    <img src="<?php echo BASE_URL?>public/assets/images/projects/regis-web-card.png" alt="Project 1" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-gray-800">PHP Registration Website</h3>
                         <p class="text-gray-600 mt-2">A fullstack registration website made without any frameworks using PHP, Apache, MySQL, and TailwindCSS</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 mt-4 inline-block">Read More</a>
+                        <a href="https://github.com/ihni/php-fullstack-website" class="text-blue-600 hover:text-blue-800 mt-4 inline-block">&lt;/&gt; Source</a>
                     </div>
                 </div>
 
                 <!-- Dummy Blog Post 2 -->
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="https://source.unsplash.com/400x250/?technology,computer" alt="Project 2" class="w-full h-56 object-cover">
+                    <img src="<?php echo BASE_URL?>public/assets/images/projects/movie-sys-card.png" alt="Project 2" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-gray-800">Python Student Dashboard</h3>
                         <p class="text-gray-600 mt-2">An interactive GUI Python Application using Tkinter for managing, registering, and students with read/write functionality(WIP)</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 mt-4 inline-block">Read More</a>
+                        <a href="https://github.com/ihni/student-regis" class="text-blue-600 hover:text-blue-800 mt-4 inline-block">&lt;/&gt; Source</a>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@ include '../includes/header.php';
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-gray-800">Python Movie Booking System</h3>
                         <p class="text-gray-600 mt-2">A CLI Python Application for the final project of my DSA class. This app allows you to book tickets for movies</p>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 mt-4 inline-block">Read More</a>
+                        <a href="https://github.com/ihni/movie-system" class="text-blue-600 hover:text-blue-800 mt-4 inline-block">&lt;/&gt; Source</a>
                     </div>
                 </div>
             </div>
