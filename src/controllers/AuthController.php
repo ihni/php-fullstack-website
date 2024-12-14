@@ -17,7 +17,7 @@ class AuthController {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
-        
+
         if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], $allowedRoles)) {
             http_response_code(403);
             Redirect::to('/templates/errors/403.php');
@@ -59,7 +59,7 @@ class AuthController {
             if ($user['role'] === 1) {
                 Redirect::to('templates/admin/dashboard.php');
             }
-            Redirect::to('templates/home.php');
+            Redirect::to('templates/users/content.php');
         } else {
             $errors['general'] = 'Email or password is incorrect';
             return $errors;
