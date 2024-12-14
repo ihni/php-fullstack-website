@@ -1,12 +1,5 @@
 RewriteEngine On
 
-# Adjust the RewriteBase to match your project folder name
-RewriteBase /php-fullstack-website/
-
-# Route all requests to index.php
-RewriteRule ^$ index.php [L]
-RewriteRule ^(.*)$ index.php [L]
-
 # Prevent direct access to the .htaccess file
 <Files .htaccess>
     Order Allow,Deny

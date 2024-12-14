@@ -21,13 +21,14 @@ class User {
     // Create operations
     public function register($fname, $lname, $email, $password) {
         $auth = include __DIR__ . '/../../config/auth.php';
+
         $passwordHash = password_hash($password, $auth['hash']['algorithm']);
 
         $query = "INSERT INTO users (fname, lname, email, password)
                   VALUES (?, ?, ?, ?)";
         
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param("ssss", $fname, $lname, $email, $password);
+        $stmt->bind_param("ssss", $fname, $lname, $email, $passwordHash);
         return $stmt->execute();
     }
 

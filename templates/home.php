@@ -4,7 +4,7 @@ include 'includes/header.php';
 ?>
 
 <main>
-    <h1>This is the home pagee</h1>
+    <h1>This is the home page</h1>
     <p>You are currently viewing the home page as a logged in user</p>
 </main
 

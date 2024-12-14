@@ -1,0 +1,13 @@
+/* FOR HOMEPAGE */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+  
+body, h1, h2, h3, p {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+nav {
+    text-align: center;
+}
