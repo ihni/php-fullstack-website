@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
-<main class="min-h-screen flex items-center justify-center bg-gray-50">
+<main class="min-h-screen mt-[-5rem] flex items-center justify-center bg-gray-50">
     <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
         <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Sign up!</h2>
         <p class="text-center text-gray-600 mb-4">Fill in your details to continue</p>
@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div>
                 <button
                     type="submit"
-                    class="w-full bg-sky-600 text-white py-2 rounded-lg hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                    class="w-full bg-sky-500 text-white py-2 rounded-lg hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
                 >
                     Sign up
                 </button>

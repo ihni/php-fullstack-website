@@ -57,21 +57,21 @@ include '../includes/header.php';
             </ul>
         </div>
 
-        <!-- Charts and Graphs Section -->
+        <!-- Graphs Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-xl font-semibold text-gray-800 mb-4">User Growth</h2>
                 <div class="h-64 bg-gray-100 rounded-lg"> 
-                    <!-- Placeholder for graph, you can integrate a chart library here -->
-                    <p class="text-center text-gray-500 mt-28">Graph Placeholder</p>
+                    <!-- Placeholder for graph -->
+                    <img src="<?php echo BASE_URL?>public/assets/images/graphs/user-graph.webp" class="w-full h-full object-contain">
                 </div>
             </div>
 
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-xl font-semibold text-gray-800 mb-4">Recent Registrations</h2>
                 <div class="h-64 bg-gray-100 rounded-lg">
-                    <!-- Placeholder for another graph, like registration trends -->
-                    <p class="text-center text-gray-500 mt-28">Graph Placeholder</p>
+                    <!-- Placeholder for graph -->
+                    <img src="<?php echo BASE_URL?>public/assets/images/graphs/recent-users.svg" class="w-full h-full object-contain">
                 </div>
             </div>
         </div>

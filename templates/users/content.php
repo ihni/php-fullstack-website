@@ -38,7 +38,7 @@ include '../includes/header.php';
 
                 <!-- Dummy Blog Post 3 -->
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="https://source.unsplash.com/400x250/?food,restaurant" alt="Project 3" class="w-full h-56 object-cover">
+                    <img src="<?php echo BASE_URL?>public/assets/images/projects/movie-sys-card.png" alt="Project 3" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-gray-800">Python Movie Booking System</h3>
                         <p class="text-gray-600 mt-2">A CLI Python Application for the final project of my DSA class. This app allows you to book tickets for movies</p>

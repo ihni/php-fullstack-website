@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<main class="min-h-screen flex items-center justify-center bg-gray-50">
+<main class="min-h-screen flex items-center justify-center bg-gray-50 mt-[-5rem]">
     <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-sm">
         <h2 class="text-2xl font-bold text-center mb-4 text-gray-800">Welcome back!</h2>
 

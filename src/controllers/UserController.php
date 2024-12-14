@@ -67,8 +67,8 @@ class UserController {
         return $this->user->getAllUsers();
     }
 
-    public function deleteUser() {
-        
+    public function deleteUser($id) {
+        return $this->user->deleteUser($id);
     }
 
     public function getUserById($id) {
@@ -92,25 +92,21 @@ class UserController {
         $role = isset($data['role']) ? (int)$data['role'] : '';
         
         $currentUser = $this->user->getUserById($id);
-    
-        // Validate first name
+  
         if (empty($fname)) {
             $errors['fname'] = 'First name is required';
         }
-    
-        // Validate last name
+
         if (empty($lname)) {
             $errors['lname'] = 'Last name is required';
         }
-    
-        // Validate email
+
         if (empty($email)) {
             $errors['email'] = 'Email is required';
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = 'Invalid email format';
         }
-    
-        // Check if email already exists (except for the current user)
+
         elseif ($this->user->emailExist($email) && $currentUser['email'] !== $email) {
             $errors['general'] = 'The email ' . $email . ' is already in use';
         }
@@ -118,6 +114,7 @@ class UserController {
         if (!empty(array_filter($errors))) {
             return $errors;
         }
+        
         $changes = [];
 
         if ($currentUser['fname'] !== $fname) {
@@ -136,26 +133,26 @@ class UserController {
             $changes[] = 'Role: ' . $oldRole . ' → ' . $newRole;
         }
 
-        if (!empty($changes)) {
-            $updateSuccess = $this->user->updateUserFirstName($id, $fname) &&
-                                $this->user->updateUserLastName($id, $lname) &&
-                                $this->user->updateUserEmail($id, $email) &&
-                                ($role !== null ? $this->user->updateUserRole($id, $role) : true);
-
-            if ($updateSuccess) {
-                return [
-                    'success' => true,
-                    'changes' => $changes,
-                ];
-            } else {
-                $errors['general'] = 'Update failed, please try again';
-            }
-        } else {
+        if (empty($changes)) {
             return [
                 'success' => false,
                 'color' => 'grey',
                 'no_changes' => true,
             ];
+        }
+        
+        $updateSuccess = $this->user->updateUserFirstName($id, $fname) &&
+                         $this->user->updateUserLastName($id, $lname) &&
+                         $this->user->updateUserEmail($id, $email) &&
+                         ($role !== null ? $this->user->updateUserRole($id, $role) : true);
+
+        if ($updateSuccess) {
+            return [
+                'success' => true,
+                'changes' => $changes,
+            ];
+        } else {
+            $errors['general'] = 'Update failed, please try again';
         }
     }
 }
