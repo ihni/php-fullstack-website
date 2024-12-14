@@ -62,4 +62,86 @@ class UserController {
         }
         return $errors;
     }
+
+    public function getAllUsers() {
+        return $this->user->getAllUsers();
+    }
+
+    public function updateUser() {
+        $errors = [
+            'fname' => '',
+            'lname' => '',
+            'email' => '',
+            'role' => '',
+            'general' => '',
+        ];
+
+        $id = isset($_POST['id']) ? $_POST['id'] : null;
+        $fname = isset($_POST['fname']) ? $_POST['fname'] : '';
+        $lname = isset($_POST['lname']) ? $_POST['lname'] : '';
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $role = isset($_POST['role']) ? $_POST['role'] : '';
+
+        $currentUser = $this->user->getUserById($id);
+
+        // Error handling
+        if (empty($fname)) {
+            $errors['fname'] = 'First name is required';
+        }
+
+        if (empty($lname)) {
+            $errors['lname'] = 'Last name is required';
+        }
+
+        if (empty($email)) {
+            $errors['email'] = 'Email is required';
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = 'Invalid email format';
+        } elseif ($this->user->emailExist($email) && $this->user->getUserById($id)['email'] !== $email) {
+            $errors['general'] = 'The email ' . $email . ' is already in use';
+        }
+
+        if (empty(array_filter($errors))) {
+            $changes = [];
+
+            if ($currentUser['fname'] !== $fname) {
+                $changes[] = $this->logChange($id, 'fname', $currentUser['fname'], $fname);
+            }
+            if ($currentUser['lname'] !== $lname) {
+                $changes[] = $this->logChange($id, 'lname', $currentUser['lname'], $lname);
+            }
+            if ($currentUser['email'] !== $email) {
+                $changes[] = $this->logChange($id, 'email', $currentUser['email'], $email);
+            }
+            if ($currentUser['role'] !== $role) {
+                $changes[] = $this->logChange($id, 'role', $currentUser['role'], $role);
+            }
+
+            $updateSuccess = $this->user->updateUserFirstName($id, $fname) &&
+                             $this->user->updateUserLastName($id, $lname) &&
+                             $this->user->updateUserEmail($id, $email) &&
+                             ($role ? $this->user->updateUserRole($id, $role) : true);
+
+            if ($updateSuccess) {
+                foreach ($changes as $change) {
+                    $this->user->logChange($change);
+                }
+
+                Redirect::to('templates/auth/update-success.php');
+            } else {
+                $errors['general'] = 'Update failed, please try again';
+            }
+        }
+        return $errors;
+    }
+
+    private function logChange($userId, $field, $oldValue, $newValue) {
+        return [
+            'user_id' => $userId,
+            'changed_field' => $field,
+            'old_value' => $oldValue,
+            'new_value' => $newValue,
+            'changed_at' => date('Y-m-d H:i:s'),
+        ];
+    }
 }

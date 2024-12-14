@@ -45,7 +45,7 @@ class User {
     }
 
     public function getUserById($id) {
-        $query = "SELECT id, fname, lname, created_at, role
+        $query = "SELECT id, fname, lname, email, created_at, role
                   FROM users
                   WHERE id = ?";
         $stmt = $this->db->prepare($query);
@@ -56,7 +56,7 @@ class User {
     }
 
     public function getAllUsers() {
-        $query = "SELECT id, fname, lname, created_at, role
+        $query = "SELECT id, fname, lname, email, created_at, role
                   FROM users";
         $stmt = $this->db->prepare($query);
         $stmt->execute();

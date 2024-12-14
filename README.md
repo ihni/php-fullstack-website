@@ -57,5 +57,5 @@ This is a simple PHP project for registering, loggin in, and viewing users. Plea
 8. **Access the Application:**
     Once everything is set up and your database is seeded, you can access your application via the browser by navigating to:
     ```arduino
-    http://localhost/php-fullstack-website/
+    http://localhost/php-fullstack-website/public/
     ```
