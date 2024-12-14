@@ -12,6 +12,10 @@ use App\Core\Database;
 *
 */
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 class Auth {
     private $db;
 
