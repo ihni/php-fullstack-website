@@ -2,13 +2,15 @@
     <div class="container mx-auto px-4 flex justify-between items-center py-4">
         <!-- Logo -->
         <div class="logo-container flex items-center">
+            <a href="<?php echo BASE_URL ?>public/">
             <img src="<?php echo BASE_URL ?>public/assets/images/icons/penguin-icon.png" alt="Logo" class="h-8 w-8">
+            </a>
             <span class="ml-2 font-bold text-lg">Registration Website</span>
         </div>
 
         <!-- Navigation Links -->
         <ul class="hidden md:flex space-x-6 text-sm font-medium">
-            <li><a href="<?php echo BASE_URL ?>public/index.php" class="hover:text-gray-500">Home</a></li>
+            <li><a href="<?php echo BASE_URL ?>public/" class="hover:text-gray-500">Home</a></li>
 
             <?php if (isset($_SESSION['user_id']) && ($_SESSION['role'] === 1)): ?>
                 <li><a href="<?php echo BASE_URL ?>templates/admin/dashboard.php" class="hover:text-gray-500">Admin Dashboard</a></li>
